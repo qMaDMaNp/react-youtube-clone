@@ -3,7 +3,7 @@ import { Stack, Box } from "@mui/material";
 
 import { ChannelCard, Loader, VideoCard } from "./";
 
-const Videos = ({ videos }) => {
+function Videos({ videos }) {
   if(!videos?.length) return <Loader />;
   
   return (
