@@ -5,7 +5,7 @@ import { logo } from '../utils/constants';
 
 import { 
   SearchBar
-} from '../components';
+} from './';
 
 function Navbar() {
   return (
