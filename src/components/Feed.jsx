@@ -8,12 +8,12 @@ function Feed() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].name);
   const [videos, setVideos] = useState(null);
 
-  const getVideos = async () => {
-    const data = await fetchFromApi(`search?part=snippet&q=${selectedCategory}`);
-    setVideos(data.items)
-  };
-
   useEffect(() => {
+    const getVideos = async () => {
+      const data = await fetchFromApi(`search?part=snippet&q=${selectedCategory}`);
+      setVideos(data.items)
+    };
+    
     setVideos(null);
     getVideos();
   }, [selectedCategory]);

@@ -43,7 +43,6 @@ function ChannelDetails() {
         <div style={{ maxWidth: '1680px' }}>
           <Videos videos={videos} />
         </div>
-
       </Box>
     </Box>
   );
