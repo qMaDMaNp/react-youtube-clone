@@ -4,7 +4,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Link } from 'react-router-dom';
 import { demoProfilePicture } from '../utils/constants';
 
-function ChannelCard({ channelDetail, marginTop }) {
+function ChannelCard({ channelDetails }) {
     return (
         <Box
             sx={{
@@ -15,24 +15,23 @@ function ChannelCard({ channelDetail, marginTop }) {
                 alignItems: 'center',
                 width: { xs: '356px', md: '320px' },
                 height: '326px',
-                margin: 'auto',
-                marginTop,
+                margin: 'auto'
             }}
         >
-            <Link to={`/channel/${channelDetail?.id?.channelId}`}>
+            <Link to={`/channel/${channelDetails?.id?.channelId}`}>
                 <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center', color: '#fff' }}>
                     <CardMedia
-                        image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
-                        alt={channelDetail?.snippet?.title}
+                        image={channelDetails?.snippet?.thumbnails?.high?.url || demoProfilePicture}
+                        alt={channelDetails?.snippet?.title}
                         sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
                     />
                     <Typography variant="h6">
-                        {channelDetail?.snippet?.title}
+                        {channelDetails?.snippet?.title}
                         <CheckCircleIcon sx={{ fontSize: '14px', color: 'gray', ml: '12px' }} />
                     </Typography>
-                    {channelDetail?.statistics?.subscriberCount && (
+                    {channelDetails?.statistics?.subscriberCount && (
                         <Typography sx={{ fontSize: '15px', fontWeight: 500, color: 'gray' }}>
-                            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
+                            {parseInt(channelDetails?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
                         </Typography>
                     )}
                 </CardContent>

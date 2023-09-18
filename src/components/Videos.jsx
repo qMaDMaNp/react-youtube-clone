@@ -11,7 +11,7 @@ function Videos({ videos }) {
       {videos.map((video, idx) => (
         <Box key={idx}>
           {video.id.videoId && <VideoCard video={video} /> }
-          {video.id.channelId && <ChannelCard channelDetail={video} />}
+          {video.id.channelId && <ChannelCard channelDetails={video} />}
         </Box>
       ))}
     </Stack>
